@@ -1,16 +1,16 @@
 import React from "react"
-import { five } from "./utils"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { GamePage } from "./pages/game.page"
+import { MainPage } from "./pages/main.page"
+import { routes } from "./utils/routing"
 
 export const App = () => {
-  const b = {
-    aa: {
-      a: "Hello",
-    },
-  }
-
   return (
-    <div>
-      {b.aa.a} World - {five}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={routes.MAIN} element={<MainPage />} />
+        <Route path={routes.GAME} element={<GamePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
